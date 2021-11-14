@@ -338,9 +338,9 @@ mean_tpr[-1] = 1.0
 ax.plot(mean_fpr, mean_tpr, color='b',
         label=r'Mean ROC (AUC = %0.3f $\pm$ %0.2f)' % (mean_auc, std_auc),
         lw=2, alpha=.8)
-std_tpr = np.std(tprs, axis=0)
-
 #Obtaine the standard deviation of tprs
+std_tpr = np.std(tprs, axis=0)
+#Obtaine the upper and lower limit of tprs for plotting
 tprs_upper = np.minimum(mean_tpr + std_tpr, 1)
 tprs_lower = np.maximum(mean_tpr - std_tpr, 0)
 #fill the gap between cross validation roc curves
